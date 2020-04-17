@@ -1,0 +1,16 @@
+**/build/
+**/docs/
+**/lib/
+**/bin/
+**/install/
+
+*.exe
+*.o
+*.so
+*.a
+*.log
+*.mp4
+
+tags
+
+!.gitignore
