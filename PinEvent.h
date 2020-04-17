@@ -1,3 +1,10 @@
+/** 
+ *  @file    PinEvent.h 
+ *  @author  Alex Rickert
+ *  @date    04/02/2020
+ *  @version 1.0
+ */
+
 #ifndef PINEVENT
 #define PINEVENT
 
@@ -6,6 +13,10 @@
 #include <TimerThree.h>
 #include <TimerFive.h>
 
+/**
+ *  @class PinEvent
+ *  @brief General class for pin interaction 
+ */
 class PinEvent
 {
   public:
@@ -23,6 +34,10 @@ class PinEvent
   bool _pinState;  
 };
 
+/**
+ *  @class TimerPWM
+ *  @brief Wrapper for PWM functionality on Timer3
+ */
 class TimerPWM : public PinEvent
 {
   public:
@@ -39,6 +54,12 @@ class TimerPWM : public PinEvent
   unsigned long _period;
 };
 
+/**
+ *  @class   PinEventInterrupt
+ *  @brief   Wrapper for ISR functionality on Timer3
+ *  @details Specifically tailored for PWM which exceeds the max period of the
+ *           built in PWM functionality
+ */
 class PinEventInterrupt : public PinEvent
 {
   public:
@@ -58,6 +79,10 @@ class PinEventInterrupt : public PinEvent
   bool activeState;
 };
 
+/**
+ *  @class  TimedServo
+ *  @brief  Extends Timer3 ISR functionality to trigger servo movement
+ */
 class TimedServo : public PinEvent
 {
   public:
